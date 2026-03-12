@@ -5,6 +5,7 @@ import Register from './pages/Register'
 import Profile from './pages/Profile'
 import Leaderboard from './pages/Leaderboard'
 import DreamDetail from './pages/DreamDetail'
+import Notifications from './pages/Notifications'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/profile/:id" element={<Profile />} />
         <Route path="/leaderboard" element={<Leaderboard />} />
         <Route path="/dream/:id" element={<DreamDetail />} />
+        <Route path="/notifications" element={<Notifications />} />
       </Routes>
     </BrowserRouter>
   )

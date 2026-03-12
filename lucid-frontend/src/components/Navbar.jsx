@@ -23,8 +23,8 @@ export default function Navbar() {
 
         {/* Logo */}
         <Link to="/" className="text-2xl font-bold text-black">
-  Lucid
-</Link>
+          Lucid
+        </Link>
 
         {/* Nav Links */}
         <div className="flex items-center gap-6">
@@ -43,6 +43,12 @@ export default function Navbar() {
 
           {user ? (
             <div className="flex items-center gap-4">
+              <Link
+                to="/notifications"
+                className="text-gray-600 hover:text-black font-medium transition"
+              >
+                🔔
+              </Link>
               <Link
                 to={`/profile/${user.id}`}
                 className="text-gray-600 hover:text-black font-medium transition"
