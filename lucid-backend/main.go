@@ -10,24 +10,19 @@ import (
 )
 
 func main() {
-	// Load environment variables
 	config.Load()
 
-	// Create Gin router
 	r := gin.Default()
 
-	// Setup CORS
 	r.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"http://localhost:5173"},
+		AllowOrigins:     []string{"http://localhost:5173", "https://lucid-bice.vercel.app"},
 		AllowMethods:     []string{"GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"},
 		AllowHeaders:     []string{"Origin", "Content-Type", "Authorization"},
 		AllowCredentials: true,
 	}))
 
-	// Register all routes
 	routes.Register(r)
 
-	// Start server
 	log.Println("🚀 Lucid backend running on port " + config.Port)
 	r.Run(":" + config.Port)
 }
